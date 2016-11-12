@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<title>Resume</title>
+</head>
+<body>
+	<div class = "container" ng-controller="AppCtrl">
+		<div class="jumbotron">
+		<h1>Resume
+		<small>for William Fong</small></h1>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="/controllers/controller.js"></script>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<th><h2>Education<h2></th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat = "edu in resumelist | filter:type='edu'">
+			<td>
+			<h3>{{edu.school}}</h3><br/>
+			{{edu.degree}}<br/>
+			{{edu.last_year}}<br/>
+			</td>
+		</tr>
+		<thead>
+			<tr>
+				<th><h2>Skills<h2></th>
+			</tr>
+		</thead>
+		<tr ng-repeat = "skill in resumelist | filter: type='skill'">
+			<td>
+			{{skill.skill}}<br/>
+			</td>
+		</tr>
+		<thead>
+			<tr>
+				<th><h2>Projects<h2></th>
+			</tr>
+		</thead>
+		<tr ng-repeat = "project in resumelist | filter: type='project'">
+			<td>
+			<h3>{{project.title}}</h3><br/>
+			{{project.description}}<br/>
+			</td>
+		</tr>
+		
+		<tr>
+
+	</div>
+</body>
+</html>
